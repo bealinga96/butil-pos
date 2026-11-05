@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#18331f">
+<title>Butil POS</title>
+<link rel="stylesheet" href="css/style.css">
+<script>
+function logoFail(img){
+  img.onerror = null;
+  img.outerHTML = '<div class="logo-fallback"><span class="lf-name">Butil</span><span class="lf-sub">by Salt &amp; Pepperr</span><span class="lf-tag">Your Premium Coffee Experience</span></div>';
+}
+</script>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-box">
+    <img class="login-logo" src="img/logo.png" alt="Butil by Salt &amp; Pepperr" onerror="logoFail(this)">
+    <form id="login-form" autocomplete="off">
+      <label for="login-user">Username</label>
+      <input id="login-user" type="text" autocapitalize="off" autocorrect="off" spellcheck="false" required>
+      <label for="login-pass">Password</label>
+      <input id="login-pass" type="password" autocapitalize="off" autocorrect="off" spellcheck="false" required>
+      <label class="check"><input type="checkbox" id="show-pass"> Show password</label>
+      <div id="login-error" class="error" hidden></div>
+      <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+  </div>
+  <footer class="login-footer">© 2025 Butil by Salt &amp; Pepperr. All rights reserved.</footer>
+</div>
+
+<!-- APP -->
+<div id="app" hidden>
+  <nav id="sidenav">
+    <div class="nav-brand"><img src="img/logo.png" alt="Butil" onerror="logoFail(this)"></div>
+    <div id="nav-user" class="nav-user"></div>
+    <ul id="nav-list"></ul>
+    <button id="logout-btn" class="nav-logout">⎋ Logout</button>
+  </nav>
+  <div id="scrim"></div>
+  <div class="main-col">
+    <header class="topbar">
+      <button id="menu-btn" aria-label="Menu">☰</button>
+      <span id="page-title"></span>
+    </header>
+    <main id="content"></main>
+    <footer class="app-footer">© 2025 Butil by Salt &amp; Pepperr. All rights reserved.</footer>
+  </div>
+</div>
+
+<div id="modal-root"></div>
+<div id="toast"></div>
+
+<script src="js/core.js"></script>
+<script src="js/barcode.js"></script>
+<script src="js/xlsx.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

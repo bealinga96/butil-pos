@@ -1,0 +1,9 @@
+{
+  "appId": "com.saltandpepperr.butil",
+  "appName": "Butil POS",
+  "webDir": "www",
+  "backgroundColor": "#FCFBF3",
+  "android": {
+    "allowMixedContent": false
+  }
+}
